@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const UserAdmin = () => {
-  return (
-    <div>UserAdmin</div>
-  )
-}
+  return <div>UserAdmin</div>;
+};
 
-export default UserAdmin
+export default UserAdmin;

@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Links from "./Components/ReactRouterDom/Links";
 import Home from "./Components/ReactRouterDom/Home";
@@ -9,28 +9,44 @@ import New from "./Components/ReactRouterDom/New";
 import Users from "./Components/ReactRouterDom/Users";
 import UserDetails from "./Components/ReactRouterDom/UserDetails";
 import UserAdmin from "./Components/ReactRouterDom/UserAdmin";
+// import Profile from "./Components/ReactRouterDom/Profile";
+// import { Auth } from "./Components/ReactRouterDom/Auth";
+// import Login from "./Components/ReactRouterDom/Login";
 import NoMatch from "./Components/ReactRouterDom/NoMatch";
-const LazyAbout = React.lazy(() => import("./Components/ReactRouterDom/About"))
+import MaterialComponents from "./Components/Material-UI/MaterialComponents";
+const LazyAbout = React.lazy(() => import("./Components/ReactRouterDom/About"));
 
 function App() {
   return (
     <>
+      {/* <Auth> */}
+      <MaterialComponents />
       <Links />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<React.Suspense fallback="Loading..."><LazyAbout /></React.Suspense>} />
+        <Route
+          path="/about"
+          element={
+            <React.Suspense fallback="Loading...">
+              <LazyAbout />
+            </React.Suspense>
+          }
+        />
         <Route path="/products" element={<Products />}>
           <Route index element={<Feature />} />
           {/* index is for the default page in products page - its called relative links */}
           <Route path="feature" element={<Feature />} />
           <Route path="new" element={<New />} />
         </Route>
-        <Route path="users" element={<Users />} >
-        <Route path=":userId" element={<UserDetails />} />
+        <Route path="users" element={<Users />}>
+          <Route path=":userId" element={<UserDetails />} />
           <Route path="admin" element={<UserAdmin />} />
-          </Route>
+        </Route>
+        {/* <Route path="/profile" element={<Profile />} /> */}
+        {/* <Route path="/login" element={<Login />} /> */}
         <Route path="*" element={<NoMatch />} />
       </Routes>
+      {/* </Auth> */}
     </>
   );
 }
