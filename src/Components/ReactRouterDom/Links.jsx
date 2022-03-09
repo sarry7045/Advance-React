@@ -19,6 +19,9 @@ const Links = () => {
         <NavLink style={NavlinkStyle} to="/about">
           About
         </NavLink>
+        <NavLink style={NavlinkStyle} to="/products">
+          Products
+        </NavLink>
       </nav>
     </>
   );
