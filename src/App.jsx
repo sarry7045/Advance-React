@@ -13,6 +13,7 @@ import UserAdmin from "./Components/ReactRouterDom/UserAdmin";
 // import { Auth } from "./Components/ReactRouterDom/Auth";
 // import Login from "./Components/ReactRouterDom/Login";
 import NoMatch from "./Components/ReactRouterDom/NoMatch";
+import Navbar from "./Components/Navbar";
 import MaterialComponents from "./Components/Material-UI/MaterialComponents";
 const LazyAbout = React.lazy(() => import("./Components/ReactRouterDom/About"));
 
@@ -20,7 +21,8 @@ function App() {
   return (
     <>
       {/* <Auth> */}
-      <MaterialComponents />
+      <Navbar />
+
       <Links />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -45,6 +47,7 @@ function App() {
         {/* <Route path="/profile" element={<Profile />} /> */}
         {/* <Route path="/login" element={<Login />} /> */}
         <Route path="*" element={<NoMatch />} />
+        <Route path="/materialcomponents" element={<MaterialComponents />} />
       </Routes>
       {/* </Auth> */}
     </>
