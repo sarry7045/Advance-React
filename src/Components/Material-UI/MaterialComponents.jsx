@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Button, Stack } from "@mui/material";
+import { Typography, Button, Stack , ButtonGroup} from "@mui/material";
 
 const MaterialComponents = () => {
   return (
@@ -31,6 +31,15 @@ const MaterialComponents = () => {
         <Button variant="outlined">Outlined</Button>
         </Stack>
       </div>
+      
+      <div>
+      <Stack spacing={2} direction="row">
+        <Button variant="contained" size="small" color="error">Text</Button>
+        <Button variant="contained" size="medium" color="secondary">Contained</Button>
+        <Button variant="contained" size="large" color="success">Outlined</Button>
+        </Stack>
+      </div>
+
     </>
   );
 };
