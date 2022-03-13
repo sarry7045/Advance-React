@@ -8,16 +8,65 @@ import {
   ToggleButton,
   TextField,
   InputAdornment,
+  Box,
+  MenuItem,
+  FormControl,
+  FormLabel,
+  FormControlLabel,
+  Radio,
+  RadioGroup,
+  Checkbox,
+  Switch,
+  Rating,
+  Autocomplete,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import FormatBoldIcon from "@mui/icons-material/FormatBold";
 import FormatItalicIcon from "@mui/icons-material/FormatItalic";
 import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined";
 import LockIcon from "@mui/icons-material/Lock";
+// import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+
+const skills = ["HTML", "CSS", "React", "Next", "Node"];
 
 const MaterialComponents = () => {
   const [formats, setFormats] = useState("");
   console.log("setFormats", setFormats);
+
+  const [country, setCountry] = useState("In");
+  console.log(country);
+
+  const [experience, setExperience] = useState("");
+  console.log(experience);
+
+  const [check, setCheck] = useState(false);
+  console.log(check);
+
+  const [dcheck, setDcheck] = useState(false);
+  console.log(dcheck);
+
+  const [rating, setRating] = useState(null);
+  console.log(rating);
+
+  const ratingChange = (e) => {
+    setRating(e.target.value);
+  };
+
+  const dcheckChange = (e) => {
+    setDcheck(e.target.checked);
+  };
+
+  const countryChange = (event) => {
+    setCountry(event.target.value);
+  };
+
+  const experienceChange = (event) => {
+    setExperience(event.target.value);
+  };
+
+  const checkChange = (event) => {
+    setCheck(event.target.checked);
+  };
 
   const handleChange = (event) => {
     setFormats(event.target.value);
@@ -140,6 +189,91 @@ const MaterialComponents = () => {
             }}
           />
         </Stack>
+      </div>
+
+      <div className="my-4 mx-2">
+        <Box>
+          <TextField
+            select
+            label="Select Country"
+            value={country}
+            onChange={countryChange}
+          >
+            <MenuItem value="In">India</MenuItem>
+            <MenuItem value="USA">USA</MenuItem>
+            <MenuItem value="AUS">Aus</MenuItem>
+          </TextField>
+        </Box>
+      </div>
+
+      <div className="my-4 mx-2">
+        <Box>
+          <FormControl id="job">
+            <FormLabel>Years Of Experience</FormLabel>
+
+            <RadioGroup
+              onChange={experienceChange}
+              value={experience}
+              name="job"
+            >
+              <FormControlLabel control={<Radio />} label="0-1" value="0-1" />
+              <FormControlLabel control={<Radio />} label="0-2" value="0-2" />
+              <FormControlLabel control={<Radio />} label="0-3" value="0-3" />
+            </RadioGroup>
+          </FormControl>
+        </Box>
+      </div>
+
+      <div className="my-4 mx-2">
+        <Box>
+          <FormControlLabel
+            label="I Accept terms and Conditions"
+            control={<Checkbox checked={check} onChange={checkChange} />}
+          ></FormControlLabel>
+        </Box>
+      </div>
+
+      <div className="my-4 mx-2">
+        <Box>
+          <FormControlLabel
+            label="Dark Mode"
+            control={
+              <Switch
+                checked={dcheck}
+                onChange={dcheckChange}
+                size="small"
+                color="success"
+              />
+            }
+          ></FormControlLabel>
+        </Box>
+      </div>
+
+      <div className="my-4 mx-2">
+        <Stack spacing={2}>
+          <Rating
+            value={rating}
+            onChange={ratingChange}
+            // precision={0.5}
+          />
+        </Stack>
+        <Stack spacing={2}>
+          {/* <Rating
+            value={rating}
+            onChange={ratingChange}
+            precision={0.5}
+            icon={<FavoriteBorderIcon />}
+          /> */}
+        </Stack>
+      </div>
+
+      <div className="my-4 mx-2">
+        <Box>
+          <Autocomplete
+            options={skills}
+            renderInput={(params) => <TextField {...params} label="Skills" />}
+          />
+        </Box>
       </div>
     </>
   );

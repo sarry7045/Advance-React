@@ -15,6 +15,8 @@ import UserAdmin from "./Components/ReactRouterDom/UserAdmin";
 import NoMatch from "./Components/ReactRouterDom/NoMatch";
 import Navbar from "./Components/Navbar";
 import MaterialComponents from "./Components/Material-UI/MaterialComponents";
+import Promises from "./Components/JavaScriptTopics/Promises.js";
+import Practice from "./Components/Practice";
 const LazyAbout = React.lazy(() => import("./Components/ReactRouterDom/About"));
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
     <>
       {/* <Auth> */}
       <Navbar />
+      <Promises />
+      <Practice />
 
       <Links />
       <Routes>
