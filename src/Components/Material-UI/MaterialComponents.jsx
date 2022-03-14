@@ -19,13 +19,13 @@ import {
   Switch,
   Rating,
   Autocomplete,
+  Grid,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import FormatBoldIcon from "@mui/icons-material/FormatBold";
 import FormatItalicIcon from "@mui/icons-material/FormatItalic";
 import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined";
 import LockIcon from "@mui/icons-material/Lock";
-// import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 const skills = ["HTML", "CSS", "React", "Next", "Node"];
 
@@ -72,6 +72,26 @@ const MaterialComponents = () => {
     setFormats(event.target.value);
     console.log(event.target.value);
   };
+
+  var a = 10;
+  console.log(a);
+  // console.log(a, b);
+  // var b = 20;
+  // Value of b is Undefned, because we called afer the clg - Hoisting
+
+  const closure = () => {
+    let a = 10;
+    console.log(a);
+    const closure1 = () => {
+      let b = 20;
+      console.log(b);
+    };
+    closure1();
+  };
+  closure();
+
+  // defined function inside the function but to print the second function we need to call the second function insdide the first function. - closure
+
   return (
     <>
       <div className="my-4 mx-2">
@@ -274,6 +294,23 @@ const MaterialComponents = () => {
             renderInput={(params) => <TextField {...params} label="Skills" />}
           />
         </Box>
+      </div>
+
+      <div className="my-4 mx-2">
+        <Grid container my={4} rowSpacing={2} columnSpacing={4}>
+          <Grid item xs={6} sm={4} md={8}>
+            <Box bgcolor="primary.light">Item 1</Box>
+          </Grid>
+          <Grid item xs={6} sm={4} md={4}>
+            <Box bgcolor="primary.light">Item 2</Box>
+          </Grid>
+          <Grid item xs={6} sm={4} md={4}>
+            <Box bgcolor="primary.light">Item 3</Box>
+          </Grid>
+          <Grid item xs={6} sm={4} md={8}>
+            <Box bgcolor="primary.light">Item 4</Box>
+          </Grid>
+        </Grid>
       </div>
     </>
   );
