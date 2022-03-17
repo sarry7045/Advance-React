@@ -20,6 +20,11 @@ import {
   Rating,
   Autocomplete,
   Grid,
+  Paper,
+  Card,
+  CardContent,
+  CardActions,
+  CardMedia,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import FormatBoldIcon from "@mui/icons-material/FormatBold";
@@ -147,13 +152,11 @@ const MaterialComponents = () => {
       </div>
 
       <div className="my-4 mx-2">
-        <Stack>
-          <ButtonGroup variant="contained" size="small" color="primary">
-            <Button>Left</Button>
-            <Button>Center</Button>
-            <Button>Right</Button>
-          </ButtonGroup>
-        </Stack>
+        <ButtonGroup variant="contained" size="small" color="primary">
+          <Button>Left</Button>
+          <Button>Center</Button>
+          <Button>Right</Button>
+        </ButtonGroup>
       </div>
 
       <div className="my-4 mx-2">
@@ -270,13 +273,12 @@ const MaterialComponents = () => {
       </div>
 
       <div className="my-4 mx-2">
-        <Stack spacing={2}>
-          <Rating
-            value={rating}
-            onChange={ratingChange}
-            // precision={0.5}
-          />
-        </Stack>
+        <Rating
+          value={rating}
+          onChange={ratingChange}
+          // precision={0.5}
+        />
+
         <Stack spacing={2}>
           {/* <Rating
             value={rating}
@@ -311,6 +313,32 @@ const MaterialComponents = () => {
             <Box bgcolor="primary.light">Item 4</Box>
           </Grid>
         </Grid>
+      </div>
+
+      <div className="my-4 mx-2">
+        <Box width="300px">
+          <Card>
+            <CardMedia
+              component="img"
+              height="140"
+              image="https://source.unsplash.com/random"
+            ></CardMedia>
+            <CardContent>
+              <Typography gutterBottom variant="h5" color="div">
+                React
+              </Typography>
+              <Typography gutterBottom variant="body2" color="text.secondary">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="small">Share</Button>
+              <Button size="small">Learn More</Button>
+            </CardActions>
+          </Card>
+        </Box>
       </div>
     </>
   );
