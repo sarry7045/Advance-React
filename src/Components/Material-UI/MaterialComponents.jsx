@@ -20,17 +20,30 @@ import {
   Rating,
   Autocomplete,
   Grid,
-  Paper,
   Card,
   CardContent,
   CardActions,
   CardMedia,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  AppBar,
+  Toolbar,
+  IconButton,
+  Menu,
+  Breadcrumbs,
+  Link,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import FormatBoldIcon from "@mui/icons-material/FormatBold";
 import FormatItalicIcon from "@mui/icons-material/FormatItalic";
 import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined";
 import LockIcon from "@mui/icons-material/Lock";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { MuiImageList } from "./ImageList";
+import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
 const skills = ["HTML", "CSS", "React", "Next", "Node"];
 
@@ -78,24 +91,20 @@ const MaterialComponents = () => {
     console.log(event.target.value);
   };
 
-  var a = 10;
-  console.log(a);
-  // console.log(a, b);
-  // var b = 20;
-  // Value of b is Undefned, because we called afer the clg - Hoisting
+  const [expanded, setExpanded] = useState(false);
 
-  const closure = () => {
-    let a = 10;
-    console.log(a);
-    const closure1 = () => {
-      let b = 20;
-      console.log(b);
-    };
-    closure1();
+  const accordionChange = (isExpanded: boolean, panel: string) => {
+    setExpanded(isExpanded ? panel : false);
   };
-  closure();
 
-  // defined function inside the function but to print the second function we need to call the second function insdide the first function. - closure
+  // const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+  // const open = Boolean(anchorEl)
+  // const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  //   setAnchorEl(event.currentTarget)
+  // }
+  // const handleClose = () => {
+  //   setAnchorEl(null)
+  // }
 
   return (
     <>
@@ -338,6 +347,170 @@ const MaterialComponents = () => {
               <Button size="small">Learn More</Button>
             </CardActions>
           </Card>
+        </Box>
+      </div>
+
+      <div className="my-4 mx-2">
+        <Accordion
+          expanded={expanded === "panel1"}
+          onChange={(event, isExpanded) =>
+            accordionChange(isExpanded, "panel1")
+          }
+        >
+          <AccordionSummary
+            id="panel1-header"
+            aria-controls="panel1-content"
+            expandIcon={<ExpandMoreIcon />}
+          >
+            <Typography>Accordion 1</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled Lorem Ipsum is simply dummy text of the
+              printing and typesetting industry. Lorem Ipsum has been the
+              industry's standard dummy text ever since the 1500s, when an
+              unknown printer took a galley of type and scrambled
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion
+          expanded={expanded === "panel2"}
+          onChange={(event, isExpanded) =>
+            accordionChange(isExpanded, "panel2")
+          }
+        >
+          <AccordionSummary
+            id="panel2-header"
+            aria-controls="panel2-content"
+            expandIcon={<ExpandMoreIcon />}
+          >
+            <Typography>Accordion 2</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled Lorem Ipsum is simply dummy text of the
+              printing and typesetting industry. Lorem Ipsum has been the
+              industry's standard dummy text ever since the 1500s, when an
+              unknown printer took a galley of type and scrambled
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion
+          expanded={expanded === "panel3"}
+          onChange={(event, isExpanded) =>
+            accordionChange(isExpanded, "panel3")
+          }
+        >
+          <AccordionSummary
+            id="panel3-header"
+            aria-controls="panel3-content"
+            expandIcon={<ExpandMoreIcon />}
+          >
+            <Typography>Accordion 3</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled Lorem Ipsum is simply dummy text of the
+              printing and typesetting industry. Lorem Ipsum has been the
+              industry's standard dummy text ever since the 1500s, when an
+              unknown printer took a galley of type and scrambled
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+      </div>
+
+      <div className="my-4 mx-2">
+        <MuiImageList />
+      </div>
+
+      <div className="my-4 mx-2">
+        <AppBar position="static" color="transparent">
+          <Toolbar>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="logo"
+            >
+              <CatchingPokemonIcon />
+            </IconButton>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              POKEMONAPP
+            </Typography>
+            <Stack direction="row" spacing={2}>
+              <Button color="inherit">Features</Button>
+              <Button color="inherit">Pricing</Button>
+              <Button color="inherit">About</Button>
+              <Button
+                color="inherit"
+                id="resources-button"
+                // aria-controls={open ? "resources-menu" : undefined}
+                aria-haspopup="true"
+                // aria-expanded={open ? "true" : undefined}
+                endIcon={<KeyboardArrowDownIcon />}
+                // onClick={handleClick}
+              >
+                Resources
+              </Button>
+              <Button color="inherit">Login</Button>
+            </Stack>
+            <Menu
+              id="resources-menu"
+              // anchorEl={anchorEl}
+              // open={open}
+              // onClose={handleClose}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "right",
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              MenuListProps={{
+                "aria-labelledby": "resources-button",
+              }}
+            >
+              <MenuItem
+              // onClick={handleClose}
+              >
+                Blog
+              </MenuItem>
+              <MenuItem
+              // onClick={handleClose}
+              >
+                Podcast
+              </MenuItem>
+            </Menu>
+          </Toolbar>
+        </AppBar>
+      </div>
+
+      <div className="my-4 mx-2">
+        <Box>
+          <Breadcrumbs aria-label="breadcrumb" separator= {<NavigateNextIcon/>}>
+            <Link underline="hover" href="#">
+              Home
+            </Link>
+            <Link underline="hover" href="#">
+              Catelog
+            </Link>
+            <Link underline="hover" href="#">
+              Accessories
+            </Link>
+            <Link underline="hover" href="#">
+              Shoes
+            </Link>
+          </Breadcrumbs>
         </Box>
       </div>
     </>

@@ -6,6 +6,7 @@ const OtherThings = () => {
   const handleClick = () => {
     setfirst(true);
   };
+
   return (
     <>
       <div>

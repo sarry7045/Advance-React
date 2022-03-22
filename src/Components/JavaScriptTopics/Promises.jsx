@@ -7,9 +7,11 @@ const Promises = () => {
     });
   });
 
-  data.then((item) => {
+  data
+    .then((item) => {
       console.warn(item);
-    }).catch((err) => {
+    })
+    .catch((err) => {
       console.warn("Err", err);
     });
 
