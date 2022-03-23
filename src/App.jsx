@@ -16,6 +16,7 @@ import NoMatch from "./Components/ReactRouterDom/NoMatch";
 import Navbar from "./Components/Navbar";
 import MaterialComponents from "./Components/Material-UI/MaterialComponents";
 import OtherThings from "./Components/ReactLogics/OtherThings";
+
 const LazyAbout = React.lazy(() => import("./Components/ReactRouterDom/About"));
 
 function App() {

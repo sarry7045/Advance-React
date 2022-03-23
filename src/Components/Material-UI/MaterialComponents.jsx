@@ -497,7 +497,7 @@ const MaterialComponents = () => {
 
       <div className="my-4 mx-2">
         <Box>
-          <Breadcrumbs aria-label="breadcrumb" separator= {<NavigateNextIcon/>}>
+          <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon />}>
             <Link underline="hover" href="#">
               Home
             </Link>
