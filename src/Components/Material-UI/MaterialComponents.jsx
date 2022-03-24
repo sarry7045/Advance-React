@@ -33,6 +33,10 @@ import {
   Menu,
   Breadcrumbs,
   Link,
+  Drawer,
+  SpeedDial,
+  SpeedDialAction,
+  SpeedDialIcon,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import FormatBoldIcon from "@mui/icons-material/FormatBold";
@@ -44,6 +48,11 @@ import { MuiImageList } from "./ImageList";
 import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import MenuIcon from "@mui/icons-material/Menu";
+import CopyIcon from "@mui/icons-material/FileCopyOutlined";
+import PrintIcon from "@mui/icons-material/Print";
+import ShareIcon from "@mui/icons-material/Share";
+import EditIcon from "@mui/icons-material/Edit";
 
 const skills = ["HTML", "CSS", "React", "Next", "Node"];
 
@@ -105,6 +114,8 @@ const MaterialComponents = () => {
   // const handleClose = () => {
   //   setAnchorEl(null)
   // }
+
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   return (
     <>
@@ -512,6 +523,54 @@ const MaterialComponents = () => {
             </Link>
           </Breadcrumbs>
         </Box>
+      </div>
+
+      <div className="my-4 mx-2">
+        <IconButton
+          size="large"
+          edge="start"
+          color="inherit"
+          aria-label="logo"
+          onClick={() => setIsDrawerOpen(true)}
+        >
+          <MenuIcon />
+        </IconButton>
+
+        <Drawer
+          anchor="left"
+          open={isDrawerOpen}
+          onClose={() => setIsDrawerOpen(false)}
+        >
+          <Box p={2} width="250px" textAlign="center" role="presentation">
+            <Typography variant="h6" component="div">
+              Side Panel{" "}
+            </Typography>
+          </Box>
+        </Drawer>
+      </div>
+
+      <div className="my-4 mx-2">
+        <SpeedDial
+          ariaLabel="Navigation speed dial"
+          sx={{ position: "absolute", bottom: 16, right: 16 }}
+          icon={<SpeedDialIcon openIcon={<EditIcon />} />}
+        >
+          <SpeedDialAction
+            icon={<CopyIcon />}
+            tooltipTitle="Copy"
+            tooltipOpen
+          />
+          <SpeedDialAction
+            icon={<PrintIcon />}
+            tooltipTitle="Print"
+            tooltipOpen
+          />
+          <SpeedDialAction
+            icon={<ShareIcon />}
+            tooltipTitle="Share"
+            tooltipOpen
+          />
+        </SpeedDial>
       </div>
     </>
   );

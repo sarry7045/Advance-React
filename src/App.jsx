@@ -48,7 +48,7 @@ function App() {
         </Route>
         {/* <Route path="/profile" element={<Profile />} /> */}
         {/* <Route path="/login" element={<Login />} /> */}
-        <Route path="/otherthings" element={<OtherThings />} />
+        <Route path="/reactlogics" element={<OtherThings />} />
         <Route path="*" element={<NoMatch />} />
         <Route path="/materialcomponents" element={<MaterialComponents />} />
       </Routes>

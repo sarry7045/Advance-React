@@ -33,7 +33,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li class="nav-item">
-                <Link class="nav-link" to="/otherthings">
+                <Link class="nav-link" to="/reactlogics">
                   React Logics
                 </Link>
               </li>
