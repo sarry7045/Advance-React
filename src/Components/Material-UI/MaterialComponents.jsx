@@ -37,6 +37,8 @@ import {
   SpeedDial,
   SpeedDialAction,
   SpeedDialIcon,
+  BottomNavigation,
+  BottomNavigationAction
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import FormatBoldIcon from "@mui/icons-material/FormatBold";
@@ -53,6 +55,9 @@ import CopyIcon from "@mui/icons-material/FileCopyOutlined";
 import PrintIcon from "@mui/icons-material/Print";
 import ShareIcon from "@mui/icons-material/Share";
 import EditIcon from "@mui/icons-material/Edit";
+import HomeIcon from "@mui/icons-material/Home";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import PersonIcon from "@mui/icons-material/Person";
 
 const skills = ["HTML", "CSS", "React", "Next", "Node"];
 
@@ -116,6 +121,8 @@ const MaterialComponents = () => {
   // }
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const [navigatevalue, setNavigatevalue] = useState(0)
 
   return (
     <>
@@ -571,6 +578,18 @@ const MaterialComponents = () => {
             tooltipOpen
           />
         </SpeedDial>
+      </div>
+
+
+      <div className="my-4 mx-2">
+
+        <BottomNavigation sx={{ width:"100%", position:"absolute", bottom: 0}} value={navigatevalue} onChange={( event , newValue) =>{ setNavigatevalue(newValue)}} showLabels>
+          <BottomNavigationAction label="Home" icon={<HomeIcon />} />
+          <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
+          <BottomNavigationAction label="Profile" icon={<PersonIcon/>}/>
+             
+
+        </BottomNavigation>
       </div>
     </>
   );
