@@ -38,7 +38,9 @@ import {
   SpeedDialAction,
   SpeedDialIcon,
   BottomNavigation,
-  BottomNavigationAction
+  BottomNavigationAction,
+  Avatar,
+  Badge,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import FormatBoldIcon from "@mui/icons-material/FormatBold";
@@ -58,6 +60,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import HomeIcon from "@mui/icons-material/Home";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import PersonIcon from "@mui/icons-material/Person";
+import MailIcon from "@mui/icons-material/Mail";
 
 const skills = ["HTML", "CSS", "React", "Next", "Node"];
 
@@ -122,7 +125,7 @@ const MaterialComponents = () => {
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  const [navigatevalue, setNavigatevalue] = useState(0)
+  const [navigatevalue, setNavigatevalue] = useState(0);
 
   return (
     <>
@@ -580,16 +583,43 @@ const MaterialComponents = () => {
         </SpeedDial>
       </div>
 
-
       <div className="my-4 mx-2">
-
-        <BottomNavigation sx={{ width:"100%", position:"absolute", bottom: 0}} value={navigatevalue} onChange={( event , newValue) =>{ setNavigatevalue(newValue)}} showLabels>
+        <BottomNavigation
+          sx={{ width: "100%", position: "absolute", bottom: 0 }}
+          value={navigatevalue}
+          onChange={(event, newValue) => {
+            setNavigatevalue(newValue);
+          }}
+          showLabels
+        >
           <BottomNavigationAction label="Home" icon={<HomeIcon />} />
           <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-          <BottomNavigationAction label="Profile" icon={<PersonIcon/>}/>
-             
-
+          <BottomNavigationAction label="Profile" icon={<PersonIcon />} />
         </BottomNavigation>
+      </div>
+
+      <div className="my-4 mx-2">
+        <Stack spacing={4}>
+          <Stack direction="row" spacing={1}>
+            <Avatar sx={{ bgcolor: "primary.light" }}>SY</Avatar>
+            <Avatar sx={{ bgcolor: "success.light" }}>NY</Avatar>
+          </Stack>
+          <Stack direction="row" spacing={1}>
+            <Avatar sx={{ bgcolor: "primary.light" }}>SY</Avatar>
+            <Avatar sx={{ bgcolor: "success.light" }}>NY</Avatar>
+          </Stack>
+        </Stack>
+      </div>
+
+      <div className="my-4 mx-2">
+        <Stack spacing={2} direction="row">
+          <Badge badgeContent={5} color="primary">
+            <MailIcon />
+          </Badge>
+          <Badge badgeContent={0} color="secondary" showZero>
+            <MailIcon />
+          </Badge>
+        </Stack>
       </div>
     </>
   );

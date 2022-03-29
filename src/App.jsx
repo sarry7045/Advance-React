@@ -24,7 +24,6 @@ function App() {
     <>
       {/* <Auth> */}
       <Navbar />
-
       <Links />
       <Routes>
         <Route path="/" element={<Home />} />
