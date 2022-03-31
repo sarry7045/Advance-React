@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Typography,
   Button,
@@ -41,6 +41,26 @@ import {
   BottomNavigationAction,
   Avatar,
   Badge,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemIcon,
+  ListItemAvatar,
+  ListItemButton,
+  Divider,
+  Chip,
+  Tooltip,
+  Alert,
+  AlertTitle,
+  Snackbar,
+  Dialog,
+  DialogActions,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+  CircularProgress,
+  LinearProgress,
+  Skeleton,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import FormatBoldIcon from "@mui/icons-material/FormatBold";
@@ -61,6 +81,10 @@ import HomeIcon from "@mui/icons-material/Home";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import PersonIcon from "@mui/icons-material/Person";
 import MailIcon from "@mui/icons-material/Mail";
+import DeleteIcon from "@mui/icons-material/Delete";
+import MUITable from "./MUITable";
+import CheckIcon from "@mui/icons-material/Check";
+import ProductContainer from "../ReduxProject/ProductContainer";
 
 const skills = ["HTML", "CSS", "React", "Next", "Node"];
 
@@ -126,6 +150,28 @@ const MaterialComponents = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const [navigatevalue, setNavigatevalue] = useState(0);
+
+  const [chips, setchips] = useState(["Chip 1", "Chip 2", "Chip 3"]);
+
+  const handleDelete = (chipToDelete: string) => {
+    setchips((chips) => chips.filter((chip) => chip !== chipToDelete));
+  };
+
+  const [open, setOpen] = useState();
+
+  const handleClose = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpen(false);
+  };
+
+  const [loading, setLoading] = useState(true);
+
+  const [dialogOpen, setdialogOpen] = useState(false);
 
   return (
     <>
@@ -619,6 +665,208 @@ const MaterialComponents = () => {
           <Badge badgeContent={0} color="secondary" showZero>
             <MailIcon />
           </Badge>
+        </Stack>
+      </div>
+
+      <div className="my-4 mx-2">
+        <Box sx={{ width: "400px", bgcolor: "#efefef" }}>
+          <List>
+            <ListItem>
+              <ListItemButton>
+                <ListItemIcon>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <MailIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                </ListItemIcon>
+
+                <ListItemText
+                  primary="List Item 1"
+                  secondary="Secondary Text"
+                />
+              </ListItemButton>
+            </ListItem>
+            <Divider />
+            <ListItem>
+              <ListItemButton>
+                <ListItemIcon>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <MailIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                </ListItemIcon>
+                <ListItemText
+                  primary="List Item 2"
+                  secondary="Secondary Text"
+                />
+              </ListItemButton>
+            </ListItem>
+            <Divider />
+            <ListItem>
+              <ListItemButton>
+                <ListItemIcon>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <MailIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                </ListItemIcon>
+                <ListItemText
+                  primary="List Item 3"
+                  secondary="Secondary Text"
+                />
+              </ListItemButton>
+            </ListItem>
+          </List>
+        </Box>
+      </div>
+
+      <div className="my-4 mx-2">
+        <Stack direction="row" spacing={1}>
+          <Chip label="Label" color="primary" size="large" />
+          <Chip
+            label="Label"
+            color="primary"
+            size="large"
+            variant="outlined"
+            avatar={<Avatar></Avatar>}
+          />
+
+          {chips.map((chip) => (
+            <Chip key={chip} label={chip} onDelete={() => handleDelete(chip)} />
+          ))}
+        </Stack>
+      </div>
+
+      <div className="my-4 mx-2">
+        <Tooltip title=" Delete" placement="top" arrow>
+          <IconButton>
+            <DeleteIcon />
+          </IconButton>
+        </Tooltip>
+      </div>
+
+      <div className="my-4 mx-2">
+        <MUITable />
+      </div>
+
+      <div className="my-4 mx-2">
+        <Alert severity="error">Alert Component</Alert>
+        <Alert severity="warning">Alert Component</Alert>
+        <Alert severity="info">Alert Component</Alert>
+        <Alert severity="success">Alert Component</Alert>
+        <Alert variant="outlined" severity="error">
+          Alert Component
+        </Alert>
+        <Alert variant="outlined" severity="warning">
+          Alert Component
+        </Alert>
+        <Alert variant="outlined" severity="info">
+          Alert Component
+        </Alert>
+        <Alert variant="outlined" severity="success">
+          Alert Component
+        </Alert>
+        <Alert
+          variant="filled"
+          severity="error"
+          onClose={() => alert("Close Alert")}
+        >
+          <AlertTitle>Error</AlertTitle>Alert Component
+        </Alert>
+        <Alert variant="filled" severity="warning">
+          <AlertTitle>Warning</AlertTitle>Alert Component
+        </Alert>
+        <Alert variant="filled" severity="info">
+          <AlertTitle>Info</AlertTitle>Alert Component
+        </Alert>
+        <Alert
+          variant="filled"
+          severity="success"
+          icon={<CheckIcon />}
+          action={
+            <Button color="inherit" size="small">
+              UND0
+            </Button>
+          }
+        >
+          <AlertTitle>Success</AlertTitle>Alert Component
+        </Alert>
+      </div>
+
+      <div className="my-4 mx-2">
+        <Button onClick={() => setOpen(true)}>Submit</Button>
+        <Snackbar
+          message="Form Submitted Succesful"
+          autoHideDuration={4000}
+          open={open}
+          onClose={handleClose}
+          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        />
+      </div>
+
+      <div className="my-4 mx-2">
+        <Button
+          onClick={() => setdialogOpen(true)}
+          variant="contained"
+          color="primary"
+        >
+          Open Dialog
+        </Button>
+        <Dialog open={dialogOpen} onClose={() => setdialogOpen(false)}>
+          <DialogTitle>
+            <DialogContent>
+              <DialogContentText>
+                Are you sure want to submit the test? You will not be able to
+                edit after submitting
+              </DialogContentText>
+            </DialogContent>
+          </DialogTitle>
+          <DialogActions>
+            <Button
+              onClick={() => setdialogOpen(false)}
+              variant="contained"
+              color="secondary"
+            >
+              Cancel
+            </Button>
+
+            <Button
+              onClick={() => setdialogOpen(false)}
+              autoFocus
+              variant="contained"
+              color="primary"
+            >
+              Submit
+            </Button>
+          </DialogActions>
+        </Dialog>
+      </div>
+
+      <div className="my-4 mx-2">
+        <CircularProgress />
+        <CircularProgress color="success" />
+        <LinearProgress />
+        <LinearProgress color="success" />
+      </div>
+
+      <div className="my-4 mx-2">
+        <Stack spacing={1} width="250px">
+          <Skeleton variant="text" animation="wave" />
+          <Skeleton
+            variant="circular"
+            width={40}
+            height={40}
+            animation="wave"
+          />
+          <Skeleton
+            variant="rectangular"
+            width={250}
+            height={125}
+            animation="wave"
+          />
         </Stack>
       </div>
     </>

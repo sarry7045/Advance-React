@@ -1,6 +1,7 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 // import Page2 from "./useContextHook/Page2";
 // import useMemoHook from "./useContextHook/useMemoHook";
+import axios from "axios";
 
 const OtherThings = () => {
   const [first, setfirst] = useState(false);
@@ -15,6 +16,21 @@ const OtherThings = () => {
     console.log("Calling");
     return count > 5 ? true : false;
   }, [count]);
+
+  const fetchProduct = async () => {
+    const response = await axios
+      .get("https://fakestoreapi.com/products")
+      .catch((err) => {
+        console.log("err", err);
+      });
+    console.log("response", response.data);
+    // const data = JSON.stringify(response);
+
+    // console.log(data);
+  };
+  useEffect(() => {
+    fetchProduct();
+  }, []);
 
   return (
     <>
