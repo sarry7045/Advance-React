@@ -14,10 +14,18 @@ const initialState = {
   products: [],
 };
 
-export const prodcutReducer = (state = initialState, action, { payload }) => {
+// export const prodcutReducer = (state = initialState, action, { payload }) => {
+//   switch (action.type) {
+//     case SET_PRODCUTS:
+//       return { ...state, products: payload };
+//     default:
+//       return state;
+//   }
+// };
+export const prodcutReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_PRODCUTS:
-      return { ...state, products: payload };
+      return { ...state };
     default:
       return state;
   }

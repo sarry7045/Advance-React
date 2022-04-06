@@ -85,6 +85,15 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import MUITable from "./MUITable";
 import CheckIcon from "@mui/icons-material/Check";
 import ProductContainer from "../ReduxProject/ProductContainer";
+import {
+  LoadingButton,
+  LocalizationProvider,
+  DatePicker,
+  TimePicker,
+  DateTimePicker,
+  DateRangePicker,
+} from "@mui/lab";
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
 
 const skills = ["HTML", "CSS", "React", "Next", "Node"];
 
@@ -172,6 +181,12 @@ const MaterialComponents = () => {
   const [loading, setLoading] = useState(true);
 
   const [dialogOpen, setdialogOpen] = useState(false);
+
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedTime, setSelectedTime] = useState(null);
+  const [selectedDateTime, setSelectedDateTime] = useState(null);
+
+  const [selectedDateRange, setSelectedDateRange] = useState(null);
 
   return (
     <>
@@ -868,6 +883,59 @@ const MaterialComponents = () => {
             animation="wave"
           />
         </Stack>
+      </div>
+
+      <div className="my-4 mx-2">
+        <LoadingButton loading variant="outlined">
+          Submit
+        </LoadingButton>
+        <LoadingButton variant="outlined">Submit</LoadingButton>
+        <LoadingButton
+          loading
+          variant="outlined"
+          loadingPosition="start"
+          startIcon={<DeleteIcon />}
+        >
+          Delete
+        </LoadingButton>
+      </div>
+
+      <div className="my-4 mx-2">
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <Stack spacing={4} sx={{ width: "250px" }}>
+            <DatePicker
+              label="Date Picker"
+              renderInput={(params) => <TextField {...params} />}
+              value={selectedDate}
+              onChange={(newvalue) => setSelectedDate(newvalue)}
+            />
+          </Stack>
+        </LocalizationProvider>{" "}
+      </div>
+
+      <div className="my-4 mx-2">
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <Stack spacing={4} sx={{ width: "250px" }}>
+            <TimePicker
+              label="Date Picker"
+              renderInput={(params) => <TextField {...params} />}
+              value={selectedTime}
+              onChange={(newvalue) => setSelectedTime(newvalue)}
+            />
+          </Stack>
+        </LocalizationProvider>
+      </div>
+      <div className="my-4 mx-2">
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <Stack spacing={4} sx={{ width: "250px" }}>
+            <DateTimePicker
+              label="Date Picker"
+              renderInput={(params) => <TextField {...params} />}
+              value={selectedDateTime}
+              onChange={(newvalue) => setSelectedDateTime(newvalue)}
+            />
+          </Stack>
+        </LocalizationProvider>
       </div>
     </>
   );
