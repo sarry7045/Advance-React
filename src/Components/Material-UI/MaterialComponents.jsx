@@ -61,6 +61,7 @@ import {
   CircularProgress,
   LinearProgress,
   Skeleton,
+  Tab,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import FormatBoldIcon from "@mui/icons-material/FormatBold";
@@ -92,6 +93,16 @@ import {
   TimePicker,
   DateTimePicker,
   DateRangePicker,
+  TabContext,
+  TabList,
+  TabPanel,
+  Timeline,
+  TimelineItem,
+  TimelineSeparator,
+  TimelineConnector,
+  TimelineContent,
+  TimelineDot,
+  TimelineOppositeContent
 } from "@mui/lab";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 
@@ -187,6 +198,11 @@ const MaterialComponents = () => {
   const [selectedDateTime, setSelectedDateTime] = useState(null);
 
   const [selectedDateRange, setSelectedDateRange] = useState(null);
+
+  const [tabValue, setTabValue] = useState("1");
+  const tabChange = (event: React.SyntheticEvent, newValue: string) => {
+    setTabValue(newValue);
+  };
 
   return (
     <>
@@ -927,7 +943,7 @@ const MaterialComponents = () => {
       </div>
       <div className="my-4 mx-2">
         <LocalizationProvider dateAdapter={AdapterDateFns}>
-          <Stack spacing={4} sx={{ width: "250px" }}>
+          <Stack spacing={4} sx={{ width: "450px" }}>
             <DateTimePicker
               label="Date Picker"
               renderInput={(params) => <TextField {...params} />}
@@ -936,6 +952,77 @@ const MaterialComponents = () => {
             />
           </Stack>
         </LocalizationProvider>
+      </div>
+
+      <div className="my-4 mx-2">
+        <TabContext value={tabValue}>
+          <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+            <TabList
+              onChange={tabChange}
+              textColor="primary"
+              indicatorColor="primary"
+              centered
+            >
+              <Tab
+                label="Tab One"
+                value="1"
+                icon={<LockIcon />}
+                iconPosition="start"
+              />
+              <Tab label="Tab One" value="2" />
+              <Tab label="Tab One" value="3" />
+            </TabList>
+          </Box>
+          <TabPanel value="1">Panel 1 </TabPanel>
+          <TabPanel value="2">Panel 2 </TabPanel>
+          <TabPanel value="3">Panel 3 </TabPanel>
+        </TabContext>
+      </div>
+
+      <div className="my-4 mx-2">
+        <Timeline position="alternate">
+          <TimelineItem>
+            <TimelineOppositeContent color="primary">9.30 am </TimelineOppositeContent>
+            <TimelineSeparator>
+              <TimelineDot color="primary" variant="outlined" />
+              <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent>City A</TimelineContent>
+          </TimelineItem>
+          <TimelineItem>
+          <TimelineOppositeContent color="primary">10.30 am </TimelineOppositeContent>
+            <TimelineSeparator>
+              <TimelineDot color="primary" variant="outlined" />
+              <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent>City B</TimelineContent>
+          </TimelineItem>
+          <TimelineItem>
+          <TimelineOppositeContent color="primary">11.30 am </TimelineOppositeContent>
+            <TimelineSeparator>
+              <TimelineDot color="primary" />
+              {/* <TimelineConnector />  */}
+            </TimelineSeparator>
+            <TimelineContent>City C</TimelineContent>
+          </TimelineItem>
+        </Timeline>
+      </div>
+
+      <div className="my-4 mx-2">
+        <Box sx={{
+          height: "300px",
+          width:{
+            xs: 100,
+            sm: 200,
+            md: 300,
+            lg: 400,
+            xl: 500,
+
+          },
+          bgcolor:"primary.main"
+        }}> 
+
+        </Box>
       </div>
     </>
   );
