@@ -8,7 +8,6 @@ import {
   TableCell,
   Paper,
 } from "@mui/material";
-import { maxHeight } from "@mui/system";
 const tableData = [
   {
     id: 1,
@@ -95,8 +94,8 @@ const tableData = [
 const MUITable = () => {
   return (
     <>
-      <TableContainer component={Paper} sx={{maxHeight: "300px"}}>
-        <Table aria-label="simple table" stickyHeader >
+      <TableContainer component={Paper} sx={{ maxHeight: "300px" }}>
+        <Table aria-label="simple table" stickyHeader>
           <TableHead>
             <TableRow>
               <TableCell>Id</TableCell>
