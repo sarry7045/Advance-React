@@ -1,56 +1,63 @@
-const items = [
-  {
-    name: "Bike",
-    price: 100,
-  },
+import React from "react";
 
-  {
-    name: "TV",
-    price: 80,
-  },
-  {
-    name: "Phone",
-    price: 50,
-  },
-  {
-    name: "Computer",
-    price: 20,
-  },
-  {
-    name: "Keyboard",
-    price: 70,
-  },
-];
+const ArrayMethods = () => {
+  const items = [
+    {
+      name: "Bike",
+      price: 100,
+    },
 
-// filter
+    {
+      name: "TV",
+      price: 80,
+    },
+    {
+      name: "Phone",
+      price: 50,
+    },
+    {
+      name: "Computer",
+      price: 20,
+    },
+    {
+      name: "Keyboard",
+      price: 70,
+    },
+  ];
 
-const filterItem = items.filter((item) => {
-  return item.price <= 100;
-});
-console.log(filterItem);
+  // filter
 
-// map
+  const filterItem = items.filter((item) => {
+    return item.price <= 100;
+  });
+  console.log(filterItem);
 
-const mapItem = items.map((item) => {
-  return (
-    <>
-      <h1>{item.name}</h1>
-      <h1>{item.price}</h1>
-    </>
-  );
-});
-console.log(mapItem);
+  // map
 
-// find
+  const mapItem = items.map((item) => {
+    return (
+      <>
+        <h1>{item.name}</h1>
+        <h1>{item.price}</h1>
+      </>
+    );
+  });
+  console.log(mapItem);
 
-const findItem = items.find((item) => {
-  return item.name === "Phone";
-});
-console.log(findItem);
+  // find
 
-//   every
+  const findItem = items.find((item) => {
+    return item.name === "Phone";
+  });
+  console.log(findItem);
 
-const everyItem = items.every((item) => {
-  return item.price <= 100;
-});
-console.log(everyItem);
+  //   every
+
+  const everyItem = items.every((item) => {
+    return item.price <= 100;
+  });
+  console.log(everyItem);
+  return <div>ArrayMethods</div>;
+};
+
+export default ArrayMethods;

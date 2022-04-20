@@ -16,6 +16,7 @@ import NoMatch from "./Components/ReactRouterDom/NoMatch";
 import Navbar from "./Components/Navbar";
 import MaterialComponents from "./Components/Material-UI/MaterialComponents";
 import OtherThings from "./Components/ReactLogics/OtherThings";
+import JavasScriptTopics from "./Components/JavaScriptTopics/JavasScriptTopics";
 
 const LazyAbout = React.lazy(() => import("./Components/ReactRouterDom/About"));
 
@@ -48,6 +49,7 @@ function App() {
         {/* <Route path="/profile" element={<Profile />} /> */}
         {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/reactlogics" element={<OtherThings />} />
+        <Route path="/javascripttopics" element={<JavasScriptTopics />} />
         <Route path="*" element={<NoMatch />} />
         <Route path="/materialcomponents" element={<MaterialComponents />} />
       </Routes>

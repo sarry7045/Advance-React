@@ -37,6 +37,11 @@ const Navbar = () => {
                   React Logics
                 </Link>
               </li>
+              <li class="nav-item">
+                <Link class="nav-link" to="/javascripttopics">
+                  JavaScriptTopics
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
