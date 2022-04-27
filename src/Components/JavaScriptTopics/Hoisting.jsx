@@ -5,6 +5,10 @@ const Hoisting = () => {
   console.log(a);
   console.log(a, b);
   var b = 20;
+  getName();
+  function getName() {
+    console.log("Javascript");
+  }
   // Value of b is Undefned, because we called afer the clg - Hoisting
   return <div>Hoisting</div>;
 };

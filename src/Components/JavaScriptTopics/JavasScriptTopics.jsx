@@ -7,20 +7,26 @@ import DeepShallowCopy from "./DeepShallowCopy";
 import CallBackFunction from "./CallBackFunction";
 import HigherOrderFunction from "./HigherOrderFunction";
 import FunctionCurrying from "./FunctionCurrying";
+import Interview from "../Interview";
+import Practice from "../Practice";
+import FirstClassFunctions from "./FirstClassFunctions";
 
 const JavasScriptTopics = () => {
   return (
     <>
       <div>JavasScriptTopics</div>
       <div>
-        {/* <ArrayMethods />
-        <Closure />
-        <Hoisting />
-        <Promises /> */}
+       {/* <ArrayMethods /> */}
+        {/* <Closure /> */}
+        {/* <Hoisting /> */}
+        {/* <Promises />  */}
         {/* <DeepShallowCopy /> */}
         {/* <CallBackFunction /> */}
         {/* <HigherOrderFunction /> */}
-        <FunctionCurrying/>
+        {/* <FunctionCurrying/> */}
+        {/* <Interview /> */}
+        <Practice/>
+        {/* <FirstClassFunctions/> */}
       </div>
     </>
   );

@@ -1,8 +1,8 @@
+// Javascript is a single threathed syncrones Language
+
 // DOM - Virtual DOM - Real DOM - React js is use the virtual dom
 // Virtual DOM is fast update and take less memory space compare to real DOM
 // Virtual DOM is copy of Realdom but if kuch chaneg karne pe wo sirt ussi line ko change karega naki puree page koo
-
-import { Component } from "react";
 
 // Async await
 // Async await ek promise function return karta hai like if koi peace of code already run ho raha hai so wo usko
@@ -58,8 +58,8 @@ import { Component } from "react";
 // Truty - true, 10, "0", [].{ }
 // Falsy - false, 0, "", null, undefined
 
-// Execution Conetxt - its means jaha javascript ka pura code
-// store hota hai like 2 part ek side memeory and second side code
+// Execution Context - its means jaha javascript ka pura code
+// store hota hai or execute hota hai like 2 part ek side memeory and second side code
 
 // Object.freeze - Ye object ko freze kar deta hai like phir hum object ka value change nhi kar sakte
 // let obj = { name: "Suraj", email: "sarry@gmail.com", }
@@ -112,7 +112,9 @@ import { Component } from "react";
 //  let a= 1000
 
 // Anonnymous Function
-// Wo function jiska koi name nhi hota 
+// Wo function jiska koi name nhi hota
+
+// Optimize React app Performance   = useMemo , Lazy Loading
 
 
 // Pure Component

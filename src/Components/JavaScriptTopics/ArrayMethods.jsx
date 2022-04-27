@@ -57,6 +57,7 @@ const ArrayMethods = () => {
     return item.price <= 100;
   });
   console.log(everyItem);
+
   return <div>ArrayMethods</div>;
 };
 
