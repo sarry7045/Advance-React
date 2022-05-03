@@ -24,7 +24,7 @@
   // Ternory Operator
 
   // var age = 19
-  // console.log((age>18) ? "You can vote ": "You can;t vote")
+  // console.log((age>18) ? "You can vote " : "You can;t vote")
 
   // var condition="snny"
   // console.log((condition=="sunny") ? "Its sunny day ": "Its a Rainy Day")

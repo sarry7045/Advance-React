@@ -199,6 +199,7 @@ const Practice = () => {
   console.log("idOddOutPut", idOddOutPut);
   console.log("reduceOutput", reduceOutput);
 
+
   return <div>Practice</div>;
 };
 

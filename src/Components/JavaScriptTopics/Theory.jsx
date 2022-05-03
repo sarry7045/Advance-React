@@ -70,7 +70,6 @@
 // Session storage - Isme sare keys and values delete ho jate hai jab hum chrome close krr dete hai
 // Local storage - Isme sari values save he rehti hai
 
-
 // Generator function
 //     function* GeneratorFx() {
 //         yield 1;
@@ -116,6 +115,21 @@
 
 // Optimize React app Performance   = useMemo , Lazy Loading
 
+// useEffect me if hum [] na lagaye toh wo baar baar cal hota rahega n wo lagane se sirf first render pe cal hoga
+// useEffect(() => {
+
+// }, [])
+
+
+// client/static side rendering and server side rendering
+// client/static side renderign
+// Isme ye puure project ka ek he sath build file bana k rakh leta hai then jese he koi user
+// click kare toh wo reponse dede suppose koi user home page se service page prr click kiya
+//  then wo request alredy build ho chuka hai
+
+// server side renedring
+// Isme jab koi user 1 page se dusre page me redirect hota hai then wo request ka response 
+// direct server se aata hai
 
 // Pure Component
 // Git reset
