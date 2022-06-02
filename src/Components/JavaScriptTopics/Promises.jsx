@@ -14,8 +14,11 @@ const Promises = () => {
     .catch((err) => {
       console.warn("Err", err);
     });
-
+  
   return <div>Promises</div>;
 };
+
+
+
 
 export default Promises;

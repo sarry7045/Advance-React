@@ -11,6 +11,8 @@ import Interview from "../Interview";
 import Practice from "../Practice";
 import FirstClassFunctions from "./FirstClassFunctions";
 import FetchAPI from "./FetchAPI";
+import Intervieww from "./Interview";
+import ArgumentObject from "./ArgumentObject";
 
 const JavasScriptTopics = () => {
   return (
@@ -26,9 +28,11 @@ const JavasScriptTopics = () => {
         {/* <HigherOrderFunction /> */}
         {/* <FunctionCurrying/> */}
         {/* <Interview /> */}
-        {/* <Practice/> */}
+        <Practice/>
         {/* <FirstClassFunctions/> */}
-        <FetchAPI/>
+        {/* <FetchAPI /> */}
+        {/* <Intervieww/> */}
+        {/* <ArgumentObject/> */}
       </div>
     </>
   );

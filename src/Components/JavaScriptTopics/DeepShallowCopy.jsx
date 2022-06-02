@@ -105,8 +105,8 @@ const DeepShallowCopy = () => {
     std2.roll = 20
     std2.result = false
     std2[1] = " Football"
-    console.log("student, std2", student, std2);
-
+  console.log("student, std2", student, std2);
+  
   return <div>DeepShallowCopy</div>;
 };
 

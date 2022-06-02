@@ -35,6 +35,7 @@ const CallBackFunction = () => {
 
   console.log(display2(show2));
 
+
   return <div>CallBackFunction</div>;
 };
 

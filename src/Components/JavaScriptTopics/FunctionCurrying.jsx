@@ -8,6 +8,11 @@ const FunctionCurrying = () => {
   const summ = (aa) => (bb) => (cc) => aa + bb + cc;
   const addd = summ(5)(5)(5);
   console.log(addd);
+
+
+  const summm = (aaa) => (bbb) => (ccc) => aaa + bbb + ccc;
+  const adddd = summm(2)(2)(4)
+  console.log(adddd);
   
   return <div>FunctionCurrying</div>;
 };

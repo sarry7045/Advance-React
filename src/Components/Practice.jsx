@@ -1,5 +1,4 @@
 import React from "react";
-import Hoisting from "./JavaScriptTopics/Hoisting";
 
 const MyAaray = [
   {
@@ -151,6 +150,9 @@ const Practice = () => {
     }
   }
   x();
+  function y() {
+    for (var i = 1; i <= 5; i++) {}
+  }
 
   // if hum var use karenge then wo print karega 6 harr ek second me but if
   // we use let then wo print karega 1 to 5 because let is the block
@@ -199,6 +201,38 @@ const Practice = () => {
   console.log("idOddOutPut", idOddOutPut);
   console.log("reduceOutput", reduceOutput);
 
+  // NAN
+  var a = 10;
+  var b = "5";
+  var c = "string";
+  var d = b / c;
+  console.log("d", d);
+
+  // rest Opearator
+
+  function rest(...inputs) {
+    console.log(inputs);
+  }
+
+  rest("rest", 2, 4, 6, 7);
+
+  // Find Even and Odd Number
+  function evenodd() {
+    for (var a = 0; a < 10; a++) {
+      if (a % 2 == 0) {
+        console.log("evvodd", a);
+      }
+    }
+  }
+  evenodd()
+
+
+  // isArray
+  var a = 10;
+  // var a = ["1", "2", "4"]
+  var b = Array.isArray(a);
+
+  console.log("isArray", b);
 
   return <div>Practice</div>;
 };
