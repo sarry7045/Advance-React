@@ -258,8 +258,6 @@ var b = a.slice(0, 2);
 // krr dega
 // exmaple : - var result= document.querySelector("p","#container",".containr1")
 
-
-
 // prevent re renndering in react components
 
 // let var const
@@ -276,6 +274,43 @@ var b = a.slice(0, 2);
 // ye multiple element ko ek me add krne ka kaam krta hai
 // targetNode.normalize();
 
+
+// multipline comment
+/*fnkfnfjfgsjfbfgjbsfjbfg
+kdsdfdfbjdfgbsdjfb*/
+
+// single line comment
+
+// JS Performance
+// for(let i =0; i < arr.length;i++){
+// }
+// let a = arr.length
+// for(let i=0; i < a; i++){
+// }
+
+// JSON.parse()
+// its convert data in to the javascript Object
+
+// const fruits = ["Banana", "Orange", "Apple", "Mango"];
+// let f = fruits.length
+// let last = fruits[fruits.length-1]
+// fruits.push("Cherry")
+// let tstr=fruits.toString()
+// let joinn = fruits.join("*")
+// let popp = fruits.pop()
+// let objj = JSON.parse(JSON.stringify(fruits))
+// let stringy = JSON.stringify(fruits)
+
+// document.write(objj)
+
+
+
+// this();
+// its refer the global object , but if hum kisi kisi object me function bana k this keyword use kare toh wo uss variable 
+// ko refere karega naa ki global ko
+// and if hum isko useStrict mode me use karenge toh wo undefined show karega
+
+// diffence between class and function components
 
 // const string = "4,a,1.5,d,22,4,z,33.6,44,12,9"
 // Example:Input: Abbaaacddda

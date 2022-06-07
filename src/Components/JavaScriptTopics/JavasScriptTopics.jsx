@@ -13,7 +13,7 @@ import FirstClassFunctions from "./FirstClassFunctions";
 import FetchAPI from "./FetchAPI";
 import Intervieww from "./Interview";
 import ArgumentObject from "./ArgumentObject";
-
+import CallApplyBind from "./CallApplyBind";
 const JavasScriptTopics = () => {
   return (
     <>
@@ -28,11 +28,12 @@ const JavasScriptTopics = () => {
         {/* <HigherOrderFunction /> */}
         {/* <FunctionCurrying/> */}
         {/* <Interview /> */}
-        <Practice/>
+        {/* <Practice/> */}
         {/* <FirstClassFunctions/> */}
         {/* <FetchAPI /> */}
         {/* <Intervieww/> */}
         {/* <ArgumentObject/> */}
+        <CallApplyBind/>
       </div>
     </>
   );
