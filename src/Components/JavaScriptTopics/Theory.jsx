@@ -274,7 +274,6 @@ var b = a.slice(0, 2);
 // ye multiple element ko ek me add krne ka kaam krta hai
 // targetNode.normalize();
 
-
 // multipline comment
 /*fnkfnfjfgsjfbfgjbsfjbfg
 kdsdfdfbjdfgbsdjfb*/
@@ -303,10 +302,8 @@ kdsdfdfbjdfgbsdjfb*/
 
 // document.write(objj)
 
-
-
 // this();
-// its refer the global object , but if hum kisi kisi object me function bana k this keyword use kare toh wo uss variable 
+// its refer the global object , but if hum kisi kisi object me function bana k this keyword use kare toh wo uss variable
 // ko refere karega naa ki global ko
 // and if hum isko useStrict mode me use karenge toh wo undefined show karega
 
@@ -316,3 +313,4 @@ kdsdfdfbjdfgbsdjfb*/
 // Example:Input: Abbaaacddda
 // Output: 1A2b3a1c3d1a
 // var num=-5; function display() { document.writeln(num/0); }
+    
