@@ -1,5 +1,8 @@
 // Javascript is a single threathed syncrones Language
 
+import { Javascript } from "@mui/icons-material";
+import { hasPointerEvents } from "@testing-library/user-event/dist/utils";
+
 // DOM - Virtual DOM - Real DOM - React js is use the virtual dom
 // Virtual DOM is fast update and take less memory space compare to real DOM
 // Virtual DOM is copy of Realdom but if kuch chaneg karne pe wo sirt ussi line ko change karega naki puree page koo
@@ -39,7 +42,6 @@
 // concat array method = "its add the multiple aaray in one aaray"
 
 // Event Bubling and Event Capturing Mostly we use Event Bubling
-//
 // In Event bubling Suppose we give the on click method on one body, div and button and then when we click on button then
 // first they called button then div then body
 // But Opposite in Event Capturing first called body thenn div then button
@@ -307,10 +309,91 @@ kdsdfdfbjdfgbsdjfb*/
 // ko refere karega naa ki global ko
 // and if hum isko useStrict mode me use karenge toh wo undefined show karega
 
-// diffence between class and function components
-
 // const string = "4,a,1.5,d,22,4,z,33.6,44,12,9"
 // Example:Input: Abbaaacddda
 // Output: 1A2b3a1c3d1a
 // var num=-5; function display() { document.writeln(num/0); }
-    
+
+// let dataArray = [
+//   { item: "Iphone-13", supplier: "supplier-1", price: 60000 },
+//   { item: "Iphone-13", supplier: "supplier-2", price: 59000 },
+//   { item: "Iphone-13", supplier: "supplier-3", price: 55000 },
+//   { item: "Airpod", supplier: "supplier-x", price: 10000 },
+//   { item: "Airpod", supplier: "supplier-y", price: 9900 },
+// ];
+
+// fizzbuzz challenge
+// create a for loop that iterates up to 100 while outputting “fizz” at multiples of 3, “buzz” at multiples
+//  of 5 and “fizzbuzz” at multiples of 3 and 5.
+
+// const a = {“d”: “data”};
+// a.d=“updatedData”;
+// console.log(a.d)
+// we cannot create variable like this
+
+// typeof null = object
+// typeof undefined = undefined
+// type of !undefined = boolean
+
+// event loop - we know ki javascript is the single threaded syncronos lanuage so call
+// stack mese apne likhe huye task or code jab move hote hai so uss process ko event loop kehte hai
+
+// componentDidMoint - first render pe he call ho jaye
+// useEffect(() => {}, []);
+
+// component did Update
+// useEffect(() => {}, [third]);
+
+// componen unMmount
+// useEffect(() => {
+//   return () => {
+//     second;
+//   };
+// }, []);
+
+// we can't use this keyword in aarow function
+
+// if hame parent se child me value bhejna hia so we use props but
+// if child se parennt me bhejna hua to we use callback function
+
+// what is middlreware and use of it - there are two types of middleware - thunk and saga - thunk hum kab use krte hai jab hum  koi api wagera
+// call  krte hoo or asyncronos task perform krte hoo
+
+// learn useReducer properly
+// reduce array method in javascript
+// how redux works in hindi
+
+// diffrent betweeen axios and fetch - axios kuch useful features provide karrta hai like ye api ko alredy striigify krke deta hai and ye status
+// code bhi provide karta hai and jo request pass kr rahe hai wo request bhi show karata hai and
+//  fetch me hume api ko leke json me convertg krke resoinse lena hota  hai
+
+// server side rendering in react SSR - Me harr kaam server pe hota hai n CSR - Harr kaam browser pe aake hota hai
+
+// unique valu from aaray list
+
+// map vs forEach - map method returnns new aray and forEach dosen't return
+
+// we can use dom in react using useRef hooks - Controlled and Uncontrolled compoennt - controlled component is handle by
+// react or react hooks and uncontrolled c hadde by dom but if we want to create form with dom method at that time we can use useRef hook
+
+// how do we implement pure component in hooks - useMemo Hooks
+
+// is there any performance chnages between class component  function component - Yes
+
+// diffrence between useCallback and useMemo - first a fall ye dono hooks hum optimizization k liye use krte hai so useCallback ka
+// use karte hum ek function ki copy set krr dete hai n useMemo ka use krke hum ek value set krr dete hai
+
+// diffence between class and function components - this keyword and lifecycle methhod
+
+// component compositions - if hum ek component bana rahe hai and wo component app file me use krke then hum ek he
+// component ko alag alag value se cal karna ho toh uss time pe Component compositions use krte hai
+
+// Javascript prototype -  suppose we have
+// const Student = { name: "Suraj" lastName: "Yadav" }
+// we need to add one moew keyword like address in that object at time we use prototype
+// Student.prototype.address={"Amboli"}
+
+// advantages of react
+// its use virtual dom
+// we can right jsx
+// single page application

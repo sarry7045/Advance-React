@@ -106,6 +106,26 @@ const DeepShallowCopy = () => {
     std2.result = false
     std2[1] = " Football"
   console.log("student, std2", student, std2);
+
+
+//   const student ={name:"Suraj", roll:10, result:true, hobbies:["Crickett","Football"]}
+
+// const studentshallow = {...student}
+
+// studentshallow.name ="Neeraj"
+// studentshallow.roll =15
+// studentshallow.result=false
+// studentshallow.hobbies[0]= "BasketBall"
+
+// const studentdeep = JSON.parse(JSON.stringify(student))
+// studentdeep.name= "Aditya"
+// studentdeep.roll = 20
+// studentdeep.result= false
+// studentdeep.hobbies[0]="Kho-Kho"
+
+// console.log(student)
+// console.log(studentshallow)
+// console.log(studentdeep)
   
   return <div>DeepShallowCopy</div>;
 };

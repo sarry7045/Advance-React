@@ -224,8 +224,7 @@ const Practice = () => {
       }
     }
   }
-  evenodd()
-
+  evenodd();
 
   // isArray
   var a = 10;
@@ -233,6 +232,20 @@ const Practice = () => {
   var b = Array.isArray(a);
 
   console.log("isArray", b);
+
+  const nums = [1, 2, 3, 4, 5];
+  const emptyArray = [];
+
+  nums.forEach(function (value, index, array) {
+    // console.log(value, index, array)
+    emptyArray.push(value * 2);
+  });
+  console.log(emptyArray);
+
+  const jadnfja = nums.map((value) => {
+    return value * 2;
+  });
+  console.log(jadnfja);
 
   return <div>Practice</div>;
 };

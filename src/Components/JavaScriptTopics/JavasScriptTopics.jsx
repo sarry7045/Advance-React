@@ -14,12 +14,15 @@ import FetchAPI from "./FetchAPI";
 import Intervieww from "./Interview";
 import ArgumentObject from "./ArgumentObject";
 import CallApplyBind from "./CallApplyBind";
+import Login from "../LoginSystemRedux/Login";
+import CallBackHok from "../ReactLogics/useCallback/CallBackHok";
+
 const JavasScriptTopics = () => {
   return (
     <>
       <div>JavasScriptTopics</div>
       <div>
-       {/* <ArrayMethods /> */}
+        {/* <ArrayMethods /> */}
         {/* <Closure /> */}
         {/* <Hoisting /> */}
         {/* <Promises />  */}
@@ -33,7 +36,9 @@ const JavasScriptTopics = () => {
         {/* <FetchAPI /> */}
         {/* <Intervieww/> */}
         {/* <ArgumentObject/> */}
-        <CallApplyBind/>
+        {/* <CallApplyBind/> */}
+        {/* <Login /> */}
+        <CallBackHok />
       </div>
     </>
   );
