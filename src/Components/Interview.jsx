@@ -33,6 +33,7 @@ const Interview = () => {
   console.log("myArray", myArray);
 
   return <div>Interview</div>;
+
 };
 
 export default Interview;

@@ -1,4 +1,3 @@
-import { ar } from "date-fns/locale";
 import React from "react";
 
 const TrickyQuestions = () => {
@@ -32,6 +31,70 @@ const TrickyQuestions = () => {
   // console.log("1" + 1)
   // console.log(1 + "1")
   // both prints 11
+
+  // Reverse
+  //   const str ="Hello Suraj"
+  // const strr = str.split("")
+  // console.log(strr.reverse().join(""))
+
+  // const student  = {name:"suraj", lastname:"Yadav"}
+  // const find = Object.keys(student)
+  // console.log(find)
+
+  // const str = "Suraj Yadav"
+  // console.log(str.replace("Suraj","Neeraj"))
+
+  //   let myName ="Suraj Yadav"
+  // let Channelname = myName
+  // myName = "Sarry"
+  // console.log(Channelname)
+  // Suraj Yadav
+
+  // const obj  = {name:"Surajj"}
+  // const objj = obj
+  // objj.name="Neeraj"
+  // console.log(objj)
+  // Neeraj
+
+  // const findVomelorNot = () => {
+  //   let char = "A";
+  //   char = char.toLocaleLowerCase();
+  //   if (
+  //     char == "a" ||
+  //     char == "e" ||
+  //     char == "i" ||
+  //     char == "o" ||
+  //     char == "u"
+  //   ) {
+  //     console.log("Char is Vomel");
+  //   } else {
+  //     console.log("Char is Not Vomel");
+  //   }
+  // };
+  // findVomelorNot();
+
+  //   const arr =["Sueraj","Ajit","Amey","Bala"]
+  // for( let element of arr){
+  //     console.log(element)
+  // }
+
+  // const num = 10000;
+  // let x = 0;
+  // let y = 1;
+  // let fn = x + y;
+  // while (fn < num) {
+  //   console.log(fn);
+  //   fn = x + y;
+  //   x = y;
+  //   y = fn;
+  // }
+
+  //   const arr =[1,2,3,4,5]
+  // const sum =arr.reduce((accum, curr)=>{
+  //     return accum + curr
+  // },20)
+  //   console.log(sum)
+  //   20 is initial value means 20 + array ka jitna total hoga woh
 
   return <div>TrickyQuestions</div>;
 };

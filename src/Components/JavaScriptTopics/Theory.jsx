@@ -393,6 +393,15 @@ useEffect(() => {
 // we need to add one moew keyword like address in that object at time we use prototype
 // Student.prototype.address={"Amboli"}
 
+// find key from the object
+// reverse the sting
+// Reverse?
+
+// oncopy = "return false"
+// onpaste = "return false"
+// onpaste ="alert("You pasted")"  
+// oncopy = "alert("You copied")"
+
 // advantages of react
 // its use virtual dom
 // we can right jsx
