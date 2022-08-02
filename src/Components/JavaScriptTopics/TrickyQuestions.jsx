@@ -96,6 +96,14 @@ const TrickyQuestions = () => {
   //   console.log(sum)
   //   20 is initial value means 20 + array ka jitna total hoga woh
 
+  //   const arr1 =[1,2,3,4,5]
+  // const arr2 =[3,4,5,6,7]
+  // const intersectionarr = arr1.filter((value)=>{
+  //     return arr2.includes(value)
+  // })
+  // const unionArr = [...new Set([...arr1,...arr2])]
+  // console.log(unionArr)
+
   return <div>TrickyQuestions</div>;
 };
 

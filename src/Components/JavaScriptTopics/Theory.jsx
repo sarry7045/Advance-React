@@ -1,8 +1,5 @@
 // Javascript is a single threathed syncrones Language
 
-import { Javascript } from "@mui/icons-material";
-import { hasPointerEvents } from "@testing-library/user-event/dist/utils";
-
 // DOM - Virtual DOM - Real DOM - React js is use the virtual dom
 // Virtual DOM is fast update and take less memory space compare to real DOM
 // Virtual DOM is copy of Realdom but if kuch chaneg karne pe wo sirt ussi line ko change karega naki puree page koo
@@ -339,17 +336,17 @@ kdsdfdfbjdfgbsdjfb*/
 // stack mese apne likhe huye task or code jab move hote hai so uss process ko event loop kehte hai
 
 // componentDidMoint - first render pe he call ho jaye
-useEffect(() => {}, []);
+// useEffect(() => {}, []);
 
 // component did Update
-useEffect(() => {}, [third]);
+// useEffect(() => {}, [third]);
 
 // componen unMmount
-useEffect(() => {
-  return () => {
-    second;
-  };
-}, []);
+// useEffect(() => {
+//   return () => {
+//     second;
+//   };
+// }, []);
 
 // we can't use this keyword in aarow function
 
